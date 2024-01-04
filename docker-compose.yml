@@ -1,0 +1,21 @@
+﻿
+version: '3.8'
+
+services:
+  todoapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: todoapi
+    ports:
+      - "80:80"
+    depends_on:
+      - mysql
+  
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: doctorwho44
+      MYSQL_DATABASE: todo
+    ports:
+      - "3306:3306"     
