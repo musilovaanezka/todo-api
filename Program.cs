@@ -41,7 +41,7 @@ builder.Services.AddCors(options =>
                 AllowAnyMethod();
             } else
             {
-                policy.WithOrigins("http://localhost:3000")
+                policy.WithOrigins("https://todo-production-3b06.up.railway.app")
                 .AllowAnyHeader().
                 AllowAnyMethod();
             }
