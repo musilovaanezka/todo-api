@@ -11,15 +11,15 @@ using TODOApi.Data;
 namespace TODOApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231222203522_update")]
-    partial class update
+    [Migration("20240105081133_NewDatabase")]
+    partial class NewDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.13")
+                .HasAnnotation("ProductVersion", "7.0.14")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("TODOApi.Models.Item", b =>
@@ -27,6 +27,9 @@ namespace TODOApi.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<bool>("Checked")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime(6)");
